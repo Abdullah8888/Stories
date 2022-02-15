@@ -11,10 +11,7 @@ import RxSwift
 
 class FirebaseServiceTest: XCTestCase {
 
-    var dd = UIView()
     func test_FirebaseService_WithSuccessStatus() {
-        //dd = UIView()
-        print("it is 1 \(dd)")
         let sut = makeSut()
         let res = sut.fetchData(StoryResponse.self, path: "")
         res.subscribe { [weak self] res in
@@ -24,7 +21,6 @@ class FirebaseServiceTest: XCTestCase {
     }
     
     func test_FirebaseService_WithFalseStatus() {
-        print("it is 2 \(dd)")
         let sut = makeSut(fetchStatus: false)
         let res = sut.fetchData(StoryResponse.self, path: "")
         res.subscribe { [weak self] res in
@@ -38,13 +34,6 @@ class FirebaseServiceTest: XCTestCase {
         mockFirebaseService.fetchStatus = fetchStatus
         return mockFirebaseService
     }
-    
-    override func tearDown() {
-        print("it is \(dd)")
-        //super.tearDown()
-        
-    }
-
 }
 
 class MockFirebaseService: FirebaseServiceProtocol {
