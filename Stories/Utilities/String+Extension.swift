@@ -8,7 +8,7 @@
 import Foundation
 
 extension String {
-    static var defaultError: String { "An error occured" }
-    static var noDataAvailable: String { "No data available" }
-    static var notAvailable: String { "Not available" }
+    static let defaultError = "An error occured" 
+    static let noDataAvailable = "No data available"
+    static let notAvailable = "Not available"
 }
